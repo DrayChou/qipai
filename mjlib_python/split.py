@@ -1,14 +1,14 @@
-#-*-coding:ascii-*-
+#-*-coding:utf-8-*-
 def get_hu_info(hand_cards, cur_card, gui_index):
 	cards = hand_cards[:]
 	if cur_card != 34:
 		cards[cur_card] = cards[cur_card] + 1
-	gui_num = 0
+	gui_num = 0 # 鬼数量
 	if gui_index != 34:
 		gui_num = cards[gui_index]
 		cards[gui_index] = 0
-	eyes = []
-	empty = -1
+	eyes = [] # 将
+	empty = -1 
 	for i in range(0,34):
 		n = cards[i]
 		if n == 0:
@@ -94,7 +94,7 @@ def check_normal(cards, begin, max_gui, cache_index, cache):
 	for i in range(begin, begin+9):
 		n = n * 10 + cards[i]
 	
-	if n == 0:
+	if n == 0: # 这个花色一张牌都没有
 	   return 0
 	return next_split(n, 0, max_gui)
 
